@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning Buds — Clases de inglés para niños en Madrid</title>
+<meta name="description" content="Clases particulares de inglés para niños a partir de 8 años, en Madrid u online. Profesor certificado por Cambridge. Horarios entre semana y fines de semana.">
+<meta property="og:title" content="Learning Buds — Clases de inglés para niños en Madrid">
+<meta property="og:description" content="Clases particulares de inglés para niños a partir de 8 años, presenciales u online, con profesor certificado por Cambridge.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Ccircle cx='15' cy='15' r='15' fill='%234B7A5A'/%3E%3Cpath d='M15 22V13' stroke='%23EEF3EC' stroke-width='1.6' stroke-linecap='round'/%3E%3Cpath d='M15 13C15 13 9 13.5 9 9C9 9 15 8 15 13Z' fill='%23EEF3EC'/%3E%3Cpath d='M15 16C15 16 21 16.5 21 12C21 12 15 11 15 16Z' fill='%23EEF3EC'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #1C2A22;
+    --forest: #2F4A38;
+    --sprout: #4B7A5A;
+    --sprout-light: #8FB09B;
+    --honey: #D99A3C;
+    --honey-dark: #B87F2B;
+    --sky: #5F86A0;
+    --paper: #EEF3EC;
+    --paper-alt: #E4ECE1;
+    --card: #FAFCF9;
+    --line: rgba(28,42,34,0.14);
+    --max: 1120px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-size:17px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    color:var(--ink);
+    margin:0;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
+  section{padding:96px 0;}
+  @media (max-width:720px){
+    section{padding:64px 0;}
+    .wrap{padding:0 20px;}
+    body{font-size:16px;}
+  }
+
+  :focus-visible{outline:2px solid var(--sky); outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(238,243,236,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    max-width:var(--max); margin:0 auto; padding:18px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{display:flex; align-items:center; gap:10px; text-decoration:none;}
+  .brand span{font-family:'Fraunces', serif; font-weight:600; font-size:20px; color:var(--ink);}
+  .nav-links{display:flex; gap:28px; align-items:center;}
+  .nav-links a{
+    text-decoration:none; color:var(--forest); font-size:15px; font-weight:500;
+  }
+  .nav-cta{
+    background:var(--sprout); color:#fff !important; padding:10px 20px; border-radius:6px;
+    font-weight:600; text-decoration:none; font-size:14.5px;
+  }
+  @media (max-width:720px){
+    .nav{padding:16px 20px; position:relative;}
+    .nav-links{
+      position:absolute; top:100%; left:0; right:0;
+      flex-direction:column; align-items:stretch; gap:0;
+      background:var(--paper); border-bottom:1px solid var(--line);
+      max-height:0; overflow:hidden; opacity:0;
+      transition:max-height 0.28s ease, opacity 0.2s ease;
+    }
+    .nav-links.open{max-height:320px; opacity:1;}
+    .nav-links a:not(.nav-cta){
+      display:block; padding:16px 20px; border-bottom:1px solid var(--line); font-size:16px;
+    }
+    .nav-cta{margin:14px 20px 18px;}
+    .menu-toggle{display:flex;}
+  }
+  .menu-toggle{
+    display:none; align-items:center; justify-content:center;
+    width:40px; height:40px; border:1px solid var(--line); border-radius:7px;
+    background:transparent; cursor:pointer; flex-direction:column; gap:4px;
+  }
+  .menu-toggle span{width:18px; height:2px; background:var(--ink); border-radius:2px; transition:transform 0.2s ease, opacity 0.2s ease;}
+  .menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+  .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
+  .menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+
+  /* ---------- Hero ---------- */
+  .hero{padding-top:76px;}
+  .hero .wrap{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;
+  }
+  @media (max-width:860px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero{padding-top:48px;}
+  }
+  .hero h1{
+    font-size:clamp(34px,4.6vw,52px);
+    line-height:1.12;
+  }
+  .hero .lede{
+    margin-top:22px; font-size:18.5px; color:var(--forest); max-width:52ch;
+  }
+  .hero-badges{
+    margin-top:26px; display:flex; gap:10px; flex-wrap:wrap;
+  }
+  .badge{
+    display:flex; align-items:center; gap:7px;
+    border:1px solid var(--line); background:var(--card);
+    padding:8px 13px; border-radius:100px; font-size:13.5px; color:var(--forest); font-weight:500;
+  }
+  .badge svg{width:14px; height:14px; flex-shrink:0;}
+  .hero-ctas{margin-top:34px; display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:14px 26px; border-radius:7px; font-weight:600; font-size:15.5px;
+    text-decoration:none; border:1px solid transparent; cursor:pointer;
+  }
+  .btn-primary{background:var(--honey); color:#26190A;}
+  .btn-primary:hover{background:var(--honey-dark);}
+  .btn-ghost{border-color:var(--line); color:var(--ink); background:transparent;}
+  .btn-ghost:hover{background:var(--paper-alt);}
+
+  .hero-art{position:relative;}
+
+  /* ---------- Trust strip ---------- */
+  .trust-strip{
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    background:var(--paper-alt);
+  }
+  .trust-strip .wrap{
+    padding:26px 32px; display:flex; gap:40px; flex-wrap:wrap; justify-content:space-between;
+  }
+  .trust-item{display:flex; align-items:center; gap:10px; font-size:14.5px; color:var(--forest); font-weight:500;}
+  .trust-item svg{width:20px; height:20px; color:var(--sprout); flex-shrink:0;}
+
+  /* ---------- About ---------- */
+  .about .wrap{display:grid; grid-template-columns:0.85fr 1.15fr; gap:60px; align-items:start;}
+  @media (max-width:860px){ .about .wrap{grid-template-columns:1fr;} }
+  .avatar-frame{
+    background:var(--sprout); border-radius:16px; padding:8px;
+  }
+  .avatar-inner{
+    background:var(--paper-alt); border-radius:10px; padding:36px 24px 24px;
+  }
+  .about h2{font-size:32px; margin-bottom:18px;}
+  .about p{color:var(--forest); font-size:17px;}
+  .about p + p{margin-top:16px;}
+  .cert-list{margin-top:26px; display:flex; flex-direction:column; gap:14px;}
+  .cert-item{
+    display:flex; gap:12px; align-items:flex-start;
+    padding:14px 16px; background:var(--card); border:1px solid var(--line); border-radius:8px;
+  }
+  .cert-item svg{width:20px; height:20px; color:var(--honey-dark); flex-shrink:0; margin-top:2px;}
+  .cert-item strong{display:block; font-size:15px; color:var(--ink);}
+  .cert-item span{font-size:14px; color:var(--forest);}
+
+  /* ---------- Why me ---------- */
+  .why{background:var(--forest); color:#fff;}
+  .why h2{color:#fff; font-size:32px; max-width:22ch;}
+  .why .intro{color:var(--sprout-light); margin-top:14px; max-width:60ch; font-size:17px;}
+  .why-grid{
+    margin-top:44px; display:grid; grid-template-columns:repeat(2,1fr); gap:1px;
+    background:rgba(255,255,255,0.14); border:1px solid rgba(255,255,255,0.14); border-radius:12px; overflow:hidden;
+  }
+  @media (max-width:720px){ .why-grid{grid-template-columns:1fr;} }
+  .why-cell{background:#324F3B; padding:28px 26px;}
+  .why-cell h3{color:#fff; font-size:18px; font-weight:600; margin-bottom:8px;}
+  .why-cell p{color:#C9DACE; font-size:15px;}
+
+  /* ---------- Method ---------- */
+  .method .head{max-width:60ch;}
+  .method h2{font-size:32px;}
+  .method .head p{color:var(--forest); margin-top:14px; font-size:17px;}
+  .method-list{margin-top:44px; display:flex; flex-direction:column;}
+  .method-row{
+    display:grid; grid-template-columns:220px 1fr; gap:28px;
+    padding:24px 0; border-top:1px solid var(--line);
+  }
+  .method-row:last-child{border-bottom:1px solid var(--line);}
+  @media (max-width:720px){ .method-row{grid-template-columns:1fr; gap:6px;} }
+  .method-row h3{font-size:18px; font-weight:600; color:var(--ink);}
+  .method-row p{color:var(--forest); font-size:15.5px;}
+
+  /* ---------- Pricing ---------- */
+  .pricing{background:var(--paper-alt);}
+  .pricing .head{max-width:62ch; margin:0 auto; text-align:center;}
+  .pricing h2{font-size:32px;}
+  .pricing .head p{color:var(--forest); margin-top:14px; font-size:17px;}
+  .plans{
+    margin-top:50px; display:grid; grid-template-columns:repeat(4,1fr); gap:18px;
+  }
+  @media (max-width:960px){ .plans{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .plans{grid-template-columns:1fr;} }
+  .plan{
+    background:var(--card); border:1px solid var(--line); border-radius:10px;
+    padding:28px 22px; display:flex; flex-direction:column; position:relative;
+  }
+  .plan-top{height:4px; border-radius:3px; margin:-28px -22px 22px; }
+  .plan.online-week .plan-top{background:var(--sky);}
+  .plan.pres-week .plan-top{background:var(--sprout);}
+  .plan.online-weekend .plan-top{background:var(--sky);}
+  .plan.pres-weekend .plan-top{background:var(--sprout);}
+  .plan-mode{font-size:13px; font-weight:600; color:var(--forest);}
+  .plan-name{font-family:'Fraunces', serif; font-size:20px; margin-top:6px; font-weight:600;}
+  .plan-price{margin-top:18px; display:flex; align-items:baseline; gap:5px;}
+  .plan-price .num{font-family:'Fraunces', serif; font-size:38px; font-weight:600;}
+  .plan-price .unit{font-size:14px; color:var(--forest);}
+  .plan-desc{margin-top:14px; font-size:14px; color:var(--forest); flex-grow:1;}
+  .plan-tag{
+    margin-top:18px; align-self:flex-start; font-size:12.5px; font-weight:600;
+    padding:5px 10px; border-radius:100px; background:var(--paper-alt); color:var(--forest);
+  }
+  .plan.online-week .plan-tag, .plan.online-weekend .plan-tag{background:rgba(95,134,160,0.16); color:var(--sky);}
+  .plan.pres-week .plan-tag, .plan.pres-weekend .plan-tag{background:rgba(75,122,90,0.16); color:var(--sprout);}
+  .pricing-note{
+    margin-top:34px; padding:20px 24px; background:var(--card); border:1px solid var(--line);
+    border-radius:10px; font-size:14.5px; color:var(--forest); max-width:760px; margin-left:auto; margin-right:auto;
+  }
+  .pricing-note strong{color:var(--ink);}
+
+  /* ---------- Form ---------- */
+  .contact .wrap{display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px;}
+  @media (max-width:860px){ .contact .wrap{grid-template-columns:1fr;} }
+  .contact h2{font-size:32px;}
+  .contact .head p{color:var(--forest); margin-top:14px; font-size:17px; max-width:44ch;}
+  .direct-contact{margin-top:32px; display:flex; flex-direction:column; gap:14px;}
+  .direct-item{display:flex; align-items:center; gap:12px; font-size:15.5px; color:var(--ink); text-decoration:none; font-weight:500;}
+  .direct-item svg{width:20px; height:20px; color:var(--sprout); flex-shrink:0;}
+
+  form{
+    background:var(--card); border:1px solid var(--line); border-radius:12px; padding:32px;
+    display:flex; flex-direction:column; gap:18px;
+  }
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media (max-width:520px){ .form-row{grid-template-columns:1fr;} }
+  label{display:flex; flex-direction:column; gap:7px; font-size:14px; font-weight:600; color:var(--forest);}
+  input, textarea, select{
+    font-family:'Work Sans', sans-serif; font-size:15px; padding:11px 13px;
+    border:1px solid var(--line); border-radius:7px; background:#fff; color:var(--ink);
+  }
+  textarea{resize:vertical; min-height:100px;}
+  input:focus, textarea:focus, select:focus{border-color:var(--sprout);}
+  .form-submit{margin-top:6px;}
+  .form-note{font-size:12.5px; color:var(--forest); opacity:0.85;}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--ink); color:#fff; padding:48px 0;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;}
+  footer .brand span{color:#fff;}
+  .footer-links{display:flex; gap:26px; font-size:14px; color:#C9DACE;}
+  .footer-links a{text-decoration:none;}
+  .footer-bottom{margin-top:26px; padding-top:26px; border-top:1px solid rgba(255,255,255,0.14); font-size:13px; color:#9DB2A6;}
+
+  /* ---------- Mascota ---------- */
+  .mascot{width:56px; height:auto; flex-shrink:0; display:block;}
+  .mascot-hero{transform:scaleX(-1) rotate(8deg); margin-top:6px;}
+  .mascot-inline{transform:rotate(-6deg);}
+  .head-with-mascot{display:flex; align-items:center; justify-content:center; gap:16px;}
+  @media (max-width:560px){ .head-with-mascot{gap:10px;} .mascot{width:44px;} }
+
+  /* ---------- Mapa ---------- */
+  .location{background:var(--paper-alt);}
+  .location .head{max-width:60ch;}
+  .location h2{font-size:32px;}
+  .location .head p{color:var(--forest); margin-top:14px; font-size:17px;}
+  .map-frame{
+    margin-top:36px; border-radius:12px; overflow:hidden; border:1px solid var(--line);
+    aspect-ratio:16/6.5; background:var(--card);
+  }
+  .map-frame iframe{width:100%; height:100%; border:0; display:block;}
+  @media (max-width:720px){ .map-frame{aspect-ratio:4/3.4;} }
+
+  /* ---------- Contador de visitas ---------- */
+  .visit-counter{margin-top:14px; display:flex; align-items:center; gap:8px;}
+  .visit-counter img{display:block; height:20px;}
+
+  /* ---------- WhatsApp flotante ---------- */
+  .whatsapp-float{
+    position:fixed; right:22px; bottom:22px; z-index:60;
+    display:flex; align-items:center; gap:10px;
+    background:#25A25A; color:#fff; text-decoration:none;
+    padding:14px; border-radius:100px;
+    box-shadow:0 6px 18px rgba(28,42,34,0.28);
+  }
+  .whatsapp-float svg{width:26px; height:26px; flex-shrink:0;}
+  .whatsapp-float .wa-label{font-size:14.5px; font-weight:600; white-space:nowrap;}
+  @media (max-width:560px){
+    .whatsapp-float{right:16px; bottom:16px; padding:14px;}
+    .whatsapp-float .wa-label{display:none;}
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq .head{max-width:60ch;}
+  .faq h2{font-size:32px;}
+  .faq .head p{color:var(--forest); margin-top:14px; font-size:17px;}
+  .faq-list{margin-top:40px; display:flex; flex-direction:column;}
+  .faq-item{border-top:1px solid var(--line);}
+  .faq-item:last-child{border-bottom:1px solid var(--line);}
+  .faq-item summary{
+    list-style:none; cursor:pointer; padding:22px 4px;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    font-family:'Fraunces', serif; font-size:18px; font-weight:600; color:var(--ink);
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-icon{
+    width:26px; height:26px; border-radius:100px; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0; position:relative;
+  }
+  .faq-icon::before, .faq-icon::after{
+    content:''; position:absolute; background:var(--sprout); border-radius:2px;
+  }
+  .faq-icon::before{width:11px; height:2px;}
+  .faq-icon::after{width:2px; height:11px; transition:transform 0.2s ease;}
+  .faq-item[open] .faq-icon::after{transform:rotate(90deg); opacity:0;}
+  .faq-answer{padding:0 4px 22px; color:var(--forest); font-size:15.5px; max-width:66ch;}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute; overflow:hidden;">
+  <symbol id="mascotBuddy" viewBox="0 0 120 130">
+    <path d="M85 78C100 70 112 55 118 40" stroke="#4B7A5A" stroke-width="10" stroke-linecap="round" fill="none"/>
+    <circle cx="120" cy="36" r="7" fill="#4B7A5A"/>
+    <path d="M60 20C88 20 102 46 98 70C95 92 78 108 58 108C36 108 20 90 20 66C20 42 34 20 60 20Z" fill="#4B7A5A"/>
+    <path d="M55 24C55 24 40 18 42 4C42 4 58 4 58 20C58 20 58 22 55 24Z" fill="#8FB09B"/>
+    <path d="M65 24C65 24 80 18 78 4C78 4 62 4 62 20C62 20 62 22 65 24Z" fill="#D99A3C"/>
+    <circle cx="48" cy="66" r="7" fill="#FAFCF9"/>
+    <circle cx="49" cy="67" r="3" fill="#1C2A22"/>
+    <circle cx="72" cy="66" r="7" fill="#FAFCF9"/>
+    <circle cx="73" cy="67" r="3" fill="#1C2A22"/>
+    <path d="M52 82C58 88 66 88 72 82" stroke="#1C2A22" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <ellipse cx="40" cy="76" rx="6" ry="4" fill="#D99A3C" opacity="0.35"/>
+    <ellipse cx="80" cy="76" rx="6" ry="4" fill="#D99A3C" opacity="0.35"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="brand">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="15" fill="#4B7A5A"/>
+        <path d="M15 22V13" stroke="#EEF3EC" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M15 13C15 13 9 13.5 9 9C9 9 15 8 15 13Z" fill="#EEF3EC"/>
+        <path d="M15 16C15 16 21 16.5 21 12C21 12 15 11 15 16Z" fill="#EEF3EC"/>
+      </svg>
+      <span>Learning Buds</span>
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#planes">Precios</a>
+      <a href="#contacto" class="nav-cta">Solicitar información</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <h1>Clases de inglés a la medida de tu hijo, no de un aula llena.</h1>
+        <p class="lede">Soy Luis, profesor certificado por Cambridge, y doy clases particulares de inglés a niños a partir de 8 años en Madrid y online. Mismo profesor cada semana, contenido adaptado a cómo aprende tu hijo, y horarios que incluyen fines de semana.</p>
+        <div class="hero-badges">
+          <div class="badge">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M12 2L14.5 8.5L21 9L16 13.5L17.5 20L12 16.5L6.5 20L8 13.5L3 9L9.5 8.5L12 2Z" fill="#D99A3C"/></svg>
+            Certificado Cambridge — Nivel C1
+          </div>
+          <div class="badge">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#4B7A5A" stroke-width="2"><path d="M4 19V5a2 2 0 012-2h9l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2z"/></svg>
+            Universidad Europea de Madrid
+          </div>
+        </div>
+        <div class="hero-ctas">
+          <a href="#contacto" class="btn btn-primary">Solicitar información</a>
+          <a href="#planes" class="btn btn-ghost">Ver precios</a>
+          <svg class="mascot mascot-hero"><use href="#mascotBuddy"></use></svg>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="210" cy="210" r="200" fill="#E4ECE1"/>
+          <path d="M210 340V180" stroke="#2F4A38" stroke-width="6" stroke-linecap="round"/>
+          <path d="M210 180C210 180 140 190 140 120C140 120 210 105 210 180Z" fill="#4B7A5A"/>
+          <path d="M210 220C210 220 280 230 280 160C280 160 210 145 210 220Z" fill="#8FB09B"/>
+          <path d="M210 340C210 340 150 350 150 300C150 300 210 290 210 340Z" fill="#4B7A5A"/>
+          <path d="M210 340C210 340 270 350 270 300C270 300 210 290 210 340Z" fill="#8FB09B"/>
+          <rect x="120" y="340" width="180" height="16" rx="8" fill="#2F4A38"/>
+          <circle cx="300" cy="120" r="34" fill="#D99A3C"/>
+          <path d="M292 118L298 126L312 108" stroke="#26190A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="100" cy="90" r="22" fill="#5F86A0"/>
+          <text x="100" y="98" text-anchor="middle" font-family="Fraunces, serif" font-size="22" fill="#fff" font-weight="600">Hi!</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-strip">
+    <div class="wrap">
+      <div class="trust-item">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        Clases 100% individuales
+      </div>
+      <div class="trust-item">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Disponible entre semana y fines de semana
+      </div>
+      <div class="trust-item">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3l2 5-2.5 1.5a11 11 0 005 5L14 12l5 2v3a2 2 0 01-2 2C9.6 19 3 12.4 3 5z"/></svg>
+        Contacto directo con el profesor
+      </div>
+      <div class="trust-item">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Presencial a domicilio u online
+      </div>
+    </div>
+  </div>
+
+  <!-- SOBRE MI -->
+  <section class="about" id="sobre-mi">
+    <div class="wrap">
+      <div class="avatar-frame">
+        <div class="avatar-inner">
+          <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="120" cy="120" r="118" fill="#FAFCF9"/>
+
+            <!-- gentle growth arc -->
+            <path d="M40 168C70 140 170 140 200 168" stroke="#E4ECE1" stroke-width="2" stroke-dasharray="1 9" stroke-linecap="round"/>
+
+            <!-- open book -->
+            <path d="M120 150V96C120 96 96 82 58 88V142C96 136 120 150 120 150Z" fill="#2F4A38"/>
+            <path d="M120 150V96C120 96 144 82 182 88V142C144 136 120 150 120 150Z" fill="#4B7A5A"/>
+            <path d="M58 88C96 82 120 96 120 96" stroke="#8FB09B" stroke-width="1.4" fill="none" opacity="0.6"/>
+            <path d="M182 88C144 82 120 96 120 96" stroke="#8FB09B" stroke-width="1.4" fill="none" opacity="0.6"/>
+            <path d="M68 100c14-3 32 1 40 8M68 116c14-3 32 1 40 8M68 132c14-3 28 0 34 6" stroke="#EEF3EC" stroke-width="1.6" stroke-linecap="round" opacity="0.55"/>
+            <path d="M172 100c-14-3-32 1-40 8M172 116c-14-3-32 1-40 8M172 132c-14-3-28 0-34 6" stroke="#EEF3EC" stroke-width="1.6" stroke-linecap="round" opacity="0.55"/>
+
+            <!-- sprout growing from the book -->
+            <path d="M120 96V52" stroke="#2F4A38" stroke-width="4" stroke-linecap="round"/>
+            <path d="M120 68C120 68 96 66 96 42C96 42 120 40 120 68Z" fill="#8FB09B"/>
+            <path d="M120 78C120 78 146 78 146 52C146 52 120 50 120 78Z" fill="#4B7A5A"/>
+
+            <!-- soft accent -->
+            <circle cx="176" cy="164" r="9" fill="#D99A3C"/>
+            <circle cx="192" cy="150" r="5" fill="#5F86A0"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="about-copy">
+        <h2>Quién da las clases</h2>
+        <p>Me llamo Luis Yandel Fabián Lozano. Tengo nivel C1 de inglés, certificado por Cambridge y por la Universidad Europea de Madrid. Empecé a dar clases en una academia privada y, después de seis meses viendo cómo funcionaban las clases en grupo, decidí dar el salto a las clases particulares — porque cada niño aprende de una forma distinta, y en un aula de quince eso es casi imposible de atender.</p>
+        <p>Ahora trabajo solo con niños a partir de 8 años, en sesiones individuales, tanto presenciales en Madrid como online. Mi forma de dar clase es flexible: me adapto al niño, no al revés.</p>
+
+        <div class="cert-list">
+          <div class="cert-item">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L14.5 8.5L21 9L16 13.5L17.5 20L12 16.5L6.5 20L8 13.5L3 9L9.5 8.5L12 2Z"/></svg>
+            <div><strong>Certificación de Cambridge — Nivel C1</strong><span>Acredita un dominio avanzado del idioma.</span></div>
+          </div>
+          <div class="cert-item">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5a2 2 0 012-2h9l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2z"/></svg>
+            <div><strong>Universidad Europea de Madrid</strong><span>Certificación de nivel C1 complementaria.</span></div>
+          </div>
+          <div class="cert-item">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <div><strong>Especializado en niños a partir de 8 años</strong><span>Oratoria, pronunciación, gramática aplicada y apoyo con deberes.</span></div>
+          </div>
+          <div class="cert-item">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+            <div><strong>Nivel B2 de alemán y buena redacción</strong><span>Disponible como apoyo puntual para deberes, tareas o proyectos escolares.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUE YO -->
+  <section class="why">
+    <div class="wrap">
+      <h2>Por qué una clase particular en vez de una academia</h2>
+      <p class="intro">En una academia el profesor cambia, el grupo marca el ritmo y el horario es fijo. En Learning Buds es al revés.</p>
+
+      <div class="why-grid">
+        <div class="why-cell">
+          <h3>Siempre el mismo profesor</h3>
+          <p>Tu hijo no empieza de cero con alguien nuevo cada trimestre. Le conozco, sé dónde flaquea y dónde ya domina.</p>
+        </div>
+        <div class="why-cell">
+          <h3>El contenido se adapta a él</h3>
+          <p>No sigo un temario cerrado para veinte niños distintos. Si necesita reforzar el colegio, reforzamos el colegio.</p>
+        </div>
+        <div class="why-cell">
+          <h3>Horarios que se ajustan a la familia</h3>
+          <p>Clases entre semana o en fin de semana, según lo que mejor os funcione a vosotros, no a un horario de academia.</p>
+        </div>
+        <div class="why-cell">
+          <h3>Hablas directamente conmigo</h3>
+          <p>Sin recepción, sin intermediarios. Tienes mi teléfono y puedes preguntarme cómo va tu hijo cuando quieras.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METODOLOGIA -->
+  <section class="method">
+    <div class="wrap">
+      <div class="head">
+        <h2>Cómo trabajamos en cada clase</h2>
+        <p>Cada niño tiene un punto fuerte y uno flojo distinto, así que la sesión se construye alrededor del suyo.</p>
+      </div>
+
+      <div class="method-list">
+        <div class="method-row">
+          <h3>Oratoria y pronunciación</h3>
+          <p>Practicamos hablar en voz alta, perder la vergüenza al equivocarse y mejorar el acento con ejercicios cortos y repetibles.</p>
+        </div>
+        <div class="method-row">
+          <h3>Gramática aplicada</h3>
+          <p>La gramática se explica a través de frases y situaciones reales, no de fichas sueltas que se olvidan a la semana siguiente.</p>
+        </div>
+        <div class="method-row">
+          <h3>Apoyo con los deberes del colegio</h3>
+          <p>Si tu hijo tiene tareas o exámenes de inglés del colegio, la sesión también sirve para prepararlos.</p>
+        </div>
+        <div class="method-row">
+          <h3>Adaptación constante</h3>
+          <p>Si algo no funciona, lo cambiamos. La metodología se ajusta a cómo responde el niño, sesión a sesión.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS ADICIONALES -->
+  <section class="method" id="otros-servicios" style="padding-top:0;">
+    <div class="wrap">
+      <div class="head">
+        <h2>Otros servicios, si los necesitáis</h2>
+        <p>Fuera del inglés, puedo echar una mano puntual con esto — se habla y se acuerda aparte, según lo que haga falta.</p>
+      </div>
+
+      <div class="why-grid" style="margin-top:36px; background:var(--line); border-color:var(--line);">
+        <div class="why-cell" style="background:var(--card);">
+          <h3 style="color:var(--ink);">Alemán — nivel B2</h3>
+          <p style="color:var(--forest);">Apoyo puntual con deberes, tareas o proyectos de alemán, para quien ya lo lleva en el colegio y necesita un empujón.</p>
+          <span class="plan-tag" style="margin-top:14px; display:inline-block;">Precio a consultar</span>
+        </div>
+        <div class="why-cell" style="background:var(--card);">
+          <h3 style="color:var(--ink);">Apoyo con redacción</h3>
+          <p style="color:var(--forest);">Ayuda a estructurar y mejorar trabajos, redacciones o proyectos escolares, en inglés o en castellano.</p>
+          <span class="plan-tag" style="margin-top:14px; display:inline-block;">Precio a consultar</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIOS -->
+  <section class="pricing" id="planes">
+    <div class="wrap">
+      <div class="head">
+        <div class="head-with-mascot">
+          <h2>Planes y precios</h2>
+          <svg class="mascot mascot-inline"><use href="#mascotBuddy"></use></svg>
+        </div>
+        <p>Elige la modalidad que mejor encaje con vuestra rutina. Todos los precios son por hora de clase.</p>
+      </div>
+
+      <div class="plans">
+        <div class="plan online-week">
+          <div class="plan-top"></div>
+          <div class="plan-mode">Entre semana</div>
+          <div class="plan-name">Online</div>
+          <div class="plan-price"><span class="num">15€</span><span class="unit">/ hora</span></div>
+          <p class="plan-desc">Clase por videollamada a través de Google Meet. Ideal para mantener una rutina fija entre semana sin desplazamientos.</p>
+          <span class="plan-tag">Google Meet</span>
+        </div>
+
+        <div class="plan pres-week">
+          <div class="plan-top"></div>
+          <div class="plan-mode">Entre semana</div>
+          <div class="plan-name">Presencial</div>
+          <div class="plan-price"><span class="num">18€</span><span class="unit">/ hora</span></div>
+          <p class="plan-desc">Clase a domicilio, en casa del alumno o donde la familia prefiera, dentro de Madrid.</p>
+          <span class="plan-tag">A domicilio</span>
+        </div>
+
+        <div class="plan online-weekend">
+          <div class="plan-top"></div>
+          <div class="plan-mode">Fin de semana</div>
+          <div class="plan-name">Online</div>
+          <div class="plan-price"><span class="num">16€</span><span class="unit">/ hora</span></div>
+          <p class="plan-desc">Misma clase por Google Meet, en sábado o domingo, para familias con la semana muy ocupada.</p>
+          <span class="plan-tag">Google Meet</span>
+        </div>
+
+        <div class="plan pres-weekend">
+          <div class="plan-top"></div>
+          <div class="plan-mode">Fin de semana</div>
+          <div class="plan-name">Presencial</div>
+          <div class="plan-price"><span class="num">20€</span><span class="unit">/ hora</span></div>
+          <p class="plan-desc">Clase a domicilio en fin de semana. Precio orientativo — confírmalo por formulario o teléfono.</p>
+          <span class="plan-tag">A domicilio</span>
+        </div>
+      </div>
+
+      <div class="pricing-note">
+        <strong>Sobre las clases presenciales:</strong> se imparten en el domicilio del alumno o en el lugar que la familia prefiera dentro de Madrid; si se solicita un local o despacho, el coste corre a cargo de la familia. Si la zona queda especialmente lejos, el precio puede ajustarse por el tiempo de desplazamiento — lo hablamos antes de confirmar.
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="wrap">
+      <div class="head">
+        <h2>Preguntas frecuentes</h2>
+        <p>Si tienes alguna otra duda que no esté aquí, escríbeme directamente por WhatsApp o por el formulario de abajo.</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Mi hijo/a no tiene mucho nivel de inglés, ¿puede empezar igual?<span class="faq-icon"></span></summary>
+          <div class="faq-answer">Sí, sin problema. En la primera clase valoro el nivel real que tiene, no el que "debería" tener por su curso, y a partir de ahí construyo el contenido. No hace falta ningún nivel previo para empezar.</div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cuánto dura cada clase?<span class="faq-icon"></span></summary>
+          <div class="faq-answer">Cada sesión dura una hora. Si en algún caso interesa una sesión más corta, lo hablamos y ajustamos el precio de forma proporcional.</div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué pasa si tenemos que cancelar una clase?<span class="faq-icon"></span></summary>
+          <div class="faq-answer">Avísame con al menos 24 horas de antelación y buscamos otro hueco sin ningún coste extra. Las cancelaciones de última hora las hablamos caso por caso.</div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cómo es la primera clase?<span class="faq-icon"></span></summary>
+          <div class="faq-answer">Es una sesión real de trabajo, no solo una entrevista: hablo con tu hijo/a para ver su nivel y sus objetivos, y ya empezamos a practicar contenido desde ese mismo día.</div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Necesita comprar algún material?<span class="faq-icon"></span></summary>
+          <div class="faq-answer">No hace falta. Preparo yo el material según lo que necesite tu hijo/a, y si quieres reforzar algo concreto del colegio, trabajamos también con lo que ya use en clase.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Las clases online, ¿son en directo?<span class="faq-icon"></span></summary>
+          <div class="faq-answer">Sí, siempre en directo por videollamada de Google Meet, con interacción real. No son vídeos grabados ni contenido genérico.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO / FORMULARIO -->
+  <section class="contact" id="contacto">
+    <div class="wrap">
+      <div class="head">
+        <div class="head-with-mascot" style="justify-content:flex-start;">
+          <h2>Cuéntame qué necesita tu hijo</h2>
+          <svg class="mascot mascot-inline" style="transform:scaleX(-1) rotate(6deg);"><use href="#mascotBuddy"></use></svg>
+        </div>
+        <p>Rellena el formulario y te responderé personalmente para concretar horario, modalidad y siguiente paso.</p>
+        <div id="returning-notice" style="display:none; margin-top:18px; padding:14px 16px; background:var(--card); border:1px solid var(--line); border-radius:8px; font-size:14px; color:var(--forest);"></div>
+
+        <div class="direct-contact">
+          <a class="direct-item" href="tel:+34685763107">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            +34 685 76 31 07
+          </a>
+          <a class="direct-item" href="https://wa.me/34685763107?text=Hola%20Luis%2C%20quiero%20informaci%C3%B3n%20sobre%20las%20clases%20de%20ingl%C3%A9s%20para%20mi%20hijo%2Fa" target="_blank" rel="noopener">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            Escríbeme por WhatsApp
+          </a>
+          <a class="direct-item" href="mailto:yndellozano@gmail.com">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" fill="none"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+            yndellozano@gmail.com
+          </a>
+          <div class="direct-item">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Madrid — presencial a domicilio, online desde cualquier lugar
+          </div>
+        </div>
+      </div>
+
+      <form id="contact-form">
+        <div class="form-row">
+          <label>Nombre del tutor legal
+            <input type="text" name="tutor" autocomplete="name" required>
+          </label>
+          <label>Nombre del alumno/a
+            <input type="text" name="alumno" autocomplete="off" required>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>Teléfono de contacto
+            <input type="tel" name="telefono" autocomplete="tel" required>
+          </label>
+          <label>Correo electrónico
+            <input type="email" name="correo" autocomplete="email" required>
+          </label>
+        </div>
+
+        <label>Modalidad de interés
+          <select name="modalidad">
+            <option>Online entre semana</option>
+            <option>Presencial entre semana</option>
+            <option>Online fin de semana</option>
+            <option>Presencial fin de semana</option>
+            <option>Alemán o apoyo con redacción (consultar)</option>
+            <option>Aún no lo sé, quiero más información</option>
+          </select>
+        </label>
+
+        <label>¿Qué necesita tu hijo? (nivel actual, objetivo, disponibilidad horaria...)
+          <textarea name="mensaje" required></textarea>
+        </label>
+
+        <!-- honeypot anti-spam: campo oculto para personas, visible solo para bots -->
+        <input type="text" name="empresa_web" id="empresa_web" style="position:absolute; left:-9999px;" tabindex="-1" autocomplete="off">
+
+        <label style="flex-direction:row; align-items:flex-start; gap:10px; font-weight:400; color:var(--ink); font-size:14px;">
+          <input type="checkbox" name="consentimiento" id="consentimiento" required style="width:16px; height:16px; margin-top:3px; flex-shrink:0;">
+          <span>He leído y acepto que Luis trate estos datos (los del tutor y los del alumno/a) únicamente para responder a esta solicitud y organizar las clases. Puedo pedir que se eliminen en cualquier momento escribiendo a <a href="mailto:yndellozano@gmail.com" style="color:var(--sprout); font-weight:600;">yndellozano@gmail.com</a>. Ver <a href="#privacidad" style="color:var(--sprout); font-weight:600;">más detalles</a>.</span>
+        </label>
+
+        <button type="submit" class="btn btn-primary form-submit" id="form-submit-btn">Enviar solicitud</button>
+        <span class="form-note" id="form-note">Al enviar el formulario, recibirás una respuesta directamente de Luis por email o teléfono.</span>
+      </form>
+
+      <script>
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('form-submit-btn');
+        const formNote = document.getElementById('form-note');
+        const WEBHOOK_URL = 'https://yndellozano.app.n8n.cloud/webhook/4cb5819d-ee45-4ecb-9a68-95803b2597a9';
+
+        contactForm.addEventListener('submit', async function (e) {
+          e.preventDefault();
+
+          // honeypot: si este campo oculto viene relleno, es un bot — no enviamos nada
+          const honeypot = document.getElementById('empresa_web').value;
+          if (honeypot) return;
+
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Enviando...';
+
+          const data = Object.fromEntries(new FormData(contactForm).entries());
+          delete data.empresa_web;
+
+          try {
+            const res = await fetch(WEBHOOK_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(data)
+            });
+
+            if (!res.ok) throw new Error('Respuesta no válida del servidor');
+
+            contactForm.innerHTML = '<p style="font-size:17px; color:var(--forest);">¡Gracias! Tu solicitud se ha enviado correctamente. Luis se pondrá en contacto contigo pronto.</p>';
+            localStorage.setItem('lb_form_submitted', new Date().toISOString());
+          } catch (err) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Enviar solicitud';
+            formNote.textContent = 'Hubo un problema al enviar el formulario. Prueba de nuevo o escribe directamente por teléfono o email.';
+            formNote.style.color = '#B33A3A';
+          }
+        });
+      </script>
+    </div>
+  </section>
+
+  <!-- PRIVACIDAD -->
+  <section class="location" id="privacidad" style="padding-top:56px; padding-bottom:56px;">
+    <div class="wrap">
+      <div class="head" style="text-align:left; margin:0;">
+        <h2 style="font-size:22px;">Privacidad de los datos del formulario</h2>
+        <p style="margin-top:14px; max-width:70ch;">Los datos que rellenas en el formulario (nombre del tutor legal, nombre del alumno/a, teléfono, correo y mensaje) los recibe únicamente Luis Yandel Fabián Lozano, responsable de Learning Buds, y se usan solo para responder a tu solicitud y organizar las clases — nunca se ceden a terceros ni se usan con fines publicitarios.</p>
+        <p style="margin-top:14px; max-width:70ch;">El formulario envía los datos a través de n8n, una herramienta técnica que actúa únicamente como intermediaria para hacérmelos llegar por email — no los usa con ningún otro fin ni los comparte con nadie más.</p>
+        <p style="margin-top:14px; max-width:70ch;">Conservo estos datos mientras dure la relación de clases con la familia, o durante un máximo de 12 meses desde el último contacto si finalmente no llegamos a empezar. Puedes pedir en cualquier momento que se corrijan o eliminen antes de ese plazo escribiendo a <a href="mailto:yndellozano@gmail.com" style="color:var(--sprout); font-weight:600;">yndellozano@gmail.com</a>.</p>
+        <p style="margin-top:14px; max-width:70ch;">Si en algún momento consideras que no se ha tratado correctamente tu solicitud, tienes derecho a reclamar ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" target="_blank" rel="noopener" style="color:var(--sprout); font-weight:600;">aepd.es</a>).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section class="location">
+    <div class="wrap">
+      <div class="head" style="text-align:center; margin:0 auto;">
+        <h2>Dónde doy clases</h2>
+        <p>Las clases presenciales se dan a domicilio en Madrid y alrededores. Las online, por Google Meet, desde cualquier lugar.</p>
+      </div>
+      <div class="map-frame">
+        <iframe
+          src="https://maps.google.com/maps?q=Madrid,+España&z=11&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa de Madrid">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <svg width="26" height="26" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="15" fill="#4B7A5A"/>
+        <path d="M15 22V13" stroke="#EEF3EC" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M15 13C15 13 9 13.5 9 9C9 9 15 8 15 13Z" fill="#EEF3EC"/>
+        <path d="M15 16C15 16 21 16.5 21 12C21 12 15 11 15 16Z" fill="#EEF3EC"/>
+      </svg>
+      <span>Learning Buds</span>
+    </a>
+    <div class="footer-links">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#planes">Precios</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="footer-bottom">+34 685 76 31 07 · yndellozano@gmail.com · Madrid, España</div>
+    <div class="visit-counter">
+      <img src="https://visitor-badge.laobi.icu/badge?page_id=learningbuds.yndellozano.madrid&text=Visitas&color=4B7A5A" alt="Contador de visitas de Learning Buds">
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/34685763107?text=Hola%20Luis%2C%20quiero%20informaci%C3%B3n%20sobre%20las%20clases%20de%20ingl%C3%A9s%20para%20mi%20hijo%2Fa" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg aria-hidden="true" viewBox="0 0 32 32" fill="none">
+    <path d="M16 4C9.4 4 4 9.4 4 16c0 2.2.6 4.3 1.7 6.1L4 28l6.1-1.6c1.7.9 3.7 1.4 5.9 1.4 6.6 0 12-5.4 12-12S22.6 4 16 4z" fill="#fff" opacity="0.15"/>
+    <path d="M16 5.3C10.1 5.3 5.3 10.1 5.3 16c0 1.9.5 3.7 1.4 5.3L5.3 26.7l5.5-1.4c1.6.9 3.4 1.3 5.2 1.3 5.9 0 10.7-4.8 10.7-10.7S21.9 5.3 16 5.3z" fill="#25A25A"/>
+    <path d="M22 19.2c-.3-.2-1.8-.9-2-1s-.5-.1-.7.1-.7.9-.9 1.1-.4.2-.7.1a8.7 8.7 0 01-2.5-1.6 9.5 9.5 0 01-1.8-2.2c-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5s0-.4 0-.5-.7-1.7-1-2.3-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3 2 3 4.8 4.3c.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.4z" fill="#fff"/>
+  </svg>
+  <span class="wa-label">WhatsApp</span>
+</a>
+
+<script>
+  const returningNotice = document.getElementById('returning-notice');
+  const lastSubmitted = localStorage.getItem('lb_form_submitted');
+  if (returningNotice && lastSubmitted) {
+    const dateStr = new Date(lastSubmitted).toLocaleDateString('es-ES', { day: 'numeric', month: 'long' });
+    returningNotice.textContent = 'Ya nos enviaste una solicitud el ' + dateStr + '. Si es para otro motivo o otro hijo/a, puedes escribirnos otra vez sin problema.';
+    returningNotice.style.display = 'block';
+  }
+</script>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  menuToggle.addEventListener('click', function () {
+    const isOpen = navLinks.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+  });
+  navLinks.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Abrir menú');
+    });
+  });
+</script>
+
+</body>
+</html>
